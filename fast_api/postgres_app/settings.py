@@ -7,11 +7,13 @@ log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 # load .env
-env = load_dotenv()
+# env = load_dotenv()
 
 # load .secret
-secret_path = join(dirname(__file__), '..', '.secret')
-load_dotenv(secret_path)
+# secret_path = join(dirname(__file__), '..', '.secret')
+# load_dotenv(secret_path)
+
+# env from docker-compose env
 
 APP_PORT = os.getenv('APP_PORT')
 
@@ -31,4 +33,4 @@ class PostgresConfiguration:
 
 
 if __name__ == "__main__":
-    print(f"{APP_PORT}")
+    print(f"{os.getenv('POSTGRES_PASSWORD')}")

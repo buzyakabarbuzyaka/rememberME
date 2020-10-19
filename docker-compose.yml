@@ -10,3 +10,37 @@ services:
     volumes:
       - ./build:/build
     network_mode: "host"
+
+#  user-database:
+#    restart: always
+#    container_name: "stat_dbs"
+#    image: postgres
+#    ports:
+#      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+#    env_file:
+#      - fast_api/.env
+#    volumes:
+#      - ./fast_api/postgres-data:/var/lib/postgresql/data
+#    networks:
+#      - stat_network
+#
+#  user-stat:
+#    build:
+#      context: ./fast_api
+#    depends_on:
+#      - user-database
+#    restart: always
+#    ports:
+#      - "${APP_PORT}:${APP_PORT}"
+#    env_file:
+#      - ./fast_api/.env
+#    tty: true
+#    volumes:
+#      - ./fast_api/postgres_app:/postgres_app
+#    stdin_open: true
+#    networks:
+#      - stat_network
+
+#networks:
+#  stat_network:
+#    name: stat_network
