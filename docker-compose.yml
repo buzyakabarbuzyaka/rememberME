@@ -3,10 +3,11 @@ services:
   telegram_bot:
     container_name: "telegram_bot"
     build:
-      dockerfile: dockerfile
       context: ./telegram_bot
     env_file:
       - ./telegram_bot/.secret
+    ports:
+      - 5000:5000
     network_mode: "host"
 
 #  user-database:
