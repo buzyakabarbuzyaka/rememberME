@@ -50,7 +50,7 @@ class Item(Base):
     id = Column(Integer, primary_key=True, index=True)
     card_id = Column(Integer, ForeignKey("cards.id"))
 
-    question = Column(String, index=True)  # TODO: add uniqueness to question, card_id
+    question = Column(String, nullable=False, index=True)  # TODO: add uniqueness to question, card_id
     answer = Column(String)
 
     card = relationship("Card", back_populates="items")
