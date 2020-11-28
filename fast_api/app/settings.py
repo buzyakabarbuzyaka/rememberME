@@ -1,7 +1,7 @@
 import logging
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
+# from os.path import join, dirname
+# from dotenv import load_dotenv
 
 log = logging.getLogger()
 log.setLevel(logging.DEBUG)

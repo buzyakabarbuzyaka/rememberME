@@ -8,9 +8,8 @@ services:
       - "${POSTGRES_PORT}:${POSTGRES_PORT}"
     env_file:
       - .env
-#      - .secret
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data
     networks:
       - stat_network
 
@@ -26,7 +25,7 @@ services:
       - .secret
     tty: true
     volumes:
-      - ./postgres_app:/postgres_app
+      - ./app:/app
     stdin_open: true
     networks:
       - stat_network
